@@ -43,14 +43,13 @@ After you're finished please remove all the comments and instructions!
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
-  - [🦻 Walkthrough  Video](#walkthrough-demo)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -117,12 +116,6 @@ The Blog app will be a classic example of a blog website. I will create a fully 
 
 <!-- WalkThrough Video -->
 
-## 🦻 WalkThrough Video <a name="#walkthrough-demo"></a>
-
-- Coming soon...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -183,7 +176,7 @@ Example command:
   rubocop .
   rspec .
 ```
-### Deployment
+### Deployment <a name="deployment"></a>
 You can deploy this project using:
 netlify or Herouku
 <!-- Example:
