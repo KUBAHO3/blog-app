@@ -7,8 +7,8 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  def recent_post
-    posts.order(created_at: :desc).limit(3)
+  def recent_comments
+    posts.order(created_at: :desc).limit(5)
   end
 
   after_save :update_post_counter
