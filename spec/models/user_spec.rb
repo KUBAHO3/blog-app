@@ -35,6 +35,24 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe 'recent_post' do
+    let(:user) { User.create(Name: 'John Doe', PostsCounter: 0) }
+
+    it 'returns the most recent posts in descending order' do
+      post1 = user.posts.create(title: 'First post', content: 'Lorem ipsum')
+      post2 = user.posts.create(title: 'Second post', content: 'Dolor sit amet')
+      post3 = user.posts.create(title: 'Third post', content: 'Consectetur adipiscing elit')
+
+      expect(user.recent_post).to eq([post3, post2, post1])
+    end
+
+    it 'returns no more than 3 posts' do
+      4.times { |n| user.posts.create(title: "Post #{n}", content: 'Lorem ipsum') }
+
+      expect(user.recent_post.size).to eq(3)
+    end
+  end
+
   subject { User.create(Name: 'Heaven', Photo: 'https://images.unsplash.com/photo-1621591557805-db1dc862a71c', Bio: 'Student at KLU.') }
   before { subject.save }
 
