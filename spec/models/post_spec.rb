@@ -73,7 +73,6 @@ RSpec.describe Post, type: :model do
     end
   end
 
-
   subject { Post.create(Title: 'Title', Text: 'Text', AuthorId: 1) }
   before { subject.save }
 
