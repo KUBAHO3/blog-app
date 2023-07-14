@@ -39,15 +39,15 @@ RSpec.describe User, type: :model do
     let(:user) { User.create(Name: 'John Doe', PostsCounter: 0) }
 
     it 'returns the most recent posts in descending order' do
-      post1 = user.posts.create(title: 'First post', content: 'Lorem ipsum')
-      post2 = user.posts.create(title: 'Second post', content: 'Dolor sit amet')
-      post3 = user.posts.create(title: 'Third post', content: 'Consectetur adipiscing elit')
+      post1 = user.posts.create(Title: 'First post', Text: 'Lorem ipsum')
+      post2 = user.posts.create(Title: 'Second post', Text: 'Dolor sit amet')
+      post3 = user.posts.create(Title: 'Third post', Text: 'Consectetur adipiscing elit')
 
       expect(user.recent_post).to eq([post3, post2, post1])
     end
 
     it 'returns no more than 3 posts' do
-      4.times { |n| user.posts.create(title: "Post #{n}", content: 'Lorem ipsum') }
+      4.times { |n| user.posts.create(Title: "Post #{n}", Text: 'Lorem ipsum') }
 
       expect(user.recent_post.size).to eq(3)
     end
