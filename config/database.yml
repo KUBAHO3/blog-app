@@ -1,23 +1,23 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: blog_app_development
+  database: blog_app_dev
   pool: 5
-  username: hellorails
-  password: hellorailspwd
+  username: test
+  password: test123
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: blog_app_test
+  database: blog_app_testing
   pool: 5
-  username: hellorails
-  password: hellorailspwd
+  username: test
+  password: test123
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: blog_app_production
+  database: blog_app_productioning
   pool: 5
-  username: hellorails
-  password: hellorailspwd
+  username: test
+  password: test123
