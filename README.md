@@ -101,6 +101,7 @@ The Blog app will be a classic example of a blog website. I will create a fully 
 - **Add tests and Validations**
 - **Create Ruby on Rails Project**
 - **Create modal schema**
+- **Add controllers**
 - **Display Text**
 
 
