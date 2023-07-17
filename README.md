@@ -98,7 +98,7 @@ The Blog app will be a classic example of a blog website. I will create a fully 
 ### Key Features <a name="key-features"></a>
 
 - **Linters SetUp**
-- **Follow HTML and CSS best practice**
+- **Add tests and Validations**
 - **Create Ruby on Rails Project**
 - **Create modal schema**
 - **Display Text**
