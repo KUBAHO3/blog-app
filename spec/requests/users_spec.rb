@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   describe 'GET' do
     before :all do
-      @user1 = User.create(name: 'Linne Heaven', photo: 'https://myphoto.com', bio: 'I am a full-stack software developer')
+      @user1 = User.create(name: 'Linne Heaven', photo: 'https://myphoto.com',
+                           bio: 'I am a full-stack software developer')
     end
 
     describe '/users#index' do
