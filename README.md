@@ -103,6 +103,7 @@ The Blog app will be a classic example of a blog website. I will create a fully 
 - **Create modal schema**
 - **Add controllers**
 - **Display Text**
+- **Add controller tests**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
