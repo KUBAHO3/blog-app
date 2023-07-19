@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   def show; end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @users = User.find(params[:user_id])
   end
 
   def set_post

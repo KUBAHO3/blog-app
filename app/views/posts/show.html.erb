@@ -1,1 +1,20 @@
-<h1> Hello Selected post detail will appear right here</h1>
+<div class='post_details'>
+  <div class='post_details_header'>
+    <h1><%= link_to @posts.title, user_post_path(@users, @posts), class: 'post_details_title' %></h1>
+    <p class='post_card_counters'>Comments: <%= @posts.comments_counter %> | Likes: <%= @posts.likes_counter %></p>
+  </div>
+
+  <p class='post_details_text'><%= @posts.text %></p>
+</div>
+
+<ul class='post_comment_list'>
+  <% if @posts.comments.empty? %>
+    <p class='comment_empty-message'>No comments yet!</p>
+  <% else %>
+    <% @posts.comments.each do |comment| %>
+      <li class='post_comment_list_item'>
+        <%= render 'shared/comment_card', comment: comment %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
