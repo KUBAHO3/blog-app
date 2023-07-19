@@ -1,0 +1,12 @@
+<div class='post_card'>
+    <h3><%= link_to post.title, user_post_path(@user, post), class: 'post_card_title' %></h3>
+    <p class='post_card_text'>
+        <% if post.text.length > 100 %>
+            <%= truncate(post.text, length: 100) %>
+        <% else %>
+            <%= post.text %>
+        <% end %>
+    </p>
+
+    <p class='post_card_counters'>Comments: <%= post.comments_counter %> | Likes: <%= post.likes_counter %></p>
+</div>
