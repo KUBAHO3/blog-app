@@ -4,6 +4,7 @@ RSpec.describe 'Posts', type: :request do
   describe 'GET' do
     before :all do
       @user1 = User.create(name: 'Linne Kubaho', photo: 'https://myphotos.com', bio: 'I am a full-stack web developer')
+      
     end
 
     describe '/posts#index' do
@@ -20,7 +21,7 @@ RSpec.describe 'Posts', type: :request do
       end
 
       it 'should include the correct placeholder text' do
-        expect(response.body).to include('Hello List of posts will appear right here')
+        expect(response.body).to include(@user1.name)
       end
     end
 
@@ -39,7 +40,7 @@ RSpec.describe 'Posts', type: :request do
       end
 
       it 'should include the correct placeholder text' do
-        expect(response.body).to include('Hello Selected post detail will appear right here')
+        expect(response.body).to include(@post1.text)
       end
     end
   end
