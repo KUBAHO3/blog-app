@@ -1,17 +1,17 @@
 <div class='user_profile'>
   <div class='user_profile_header'>
-    <%= render 'shared/user_card', user: @user, user_card_class: 'user_card no_hover' %>
+    <%= render 'shared/user_card', user: @users, user_card_class: 'user_card no_hover' %>
     <div class='user_profile_bio'>
       <h3>Bio</h3>
-      <p><%= @user.bio %></p>
+      <p><%= @users.bio %></p>
     </div>
   </div>
 
   <ul class='post_list'>
-    <% if @user.posts.empty? %>
+    <% if @users.posts.empty? %>
       <p class='user_empty-message'>No posts yet!</p>
     <% else %>
-      <% @user.three_recent_posts.each do |post| %>
+      <% @users.most_recent_three_posts.each do |post| %>
         <li>
           <%= render 'shared/post_card', post: post %>
         </li>
@@ -19,9 +19,9 @@
     <% end %>
   </ul>
 
-  <% if @user.posts_counter.positive? %>
+  <% if @users.postsCounter %>
     <div class='post_cta'>
-        <%=render 'shared/button', btnName: 'See all posts', btnClass: 'btn btn_cta', btnPath: user_posts_path(@user) %>
+        <%=render 'shared/button', btnName: 'See all posts', btnClass: 'btn btn_cta', btnPath: user_posts_path(@users) %>
     </div>
   <% end %>
 </div>

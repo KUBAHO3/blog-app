@@ -1,5 +1,5 @@
 <div class='post_card'>
-    <h3><%= link_to post.title, user_post_path(@user, post), class: 'post_card_title' %></h3>
+    <h3><%= link_to post.title, user_post_path(@users, post), class: 'post_card_title' %></h3>
     <p class='post_card_text'>
         <% if post.text.length > 100 %>
             <%= truncate(post.text, length: 100) %>
