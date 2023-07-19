@@ -4,7 +4,6 @@ RSpec.describe 'Posts', type: :request do
   describe 'GET' do
     before :all do
       @user1 = User.create(name: 'Linne Kubaho', photo: 'https://myphotos.com', bio: 'I am a full-stack web developer')
-      
     end
 
     describe '/posts#index' do
