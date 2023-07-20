@@ -1,0 +1,14 @@
+<%= link_to user, class: user_card_class do %>
+    <div class='user_card_photo'>
+      <% if user.photo.present? %>
+        <%= image_tag(user.photo, alt: user.name) %>
+      <% else %>
+        <%= image_tag('default_user.png', alt: user.name) %>
+      <% end %>
+    </div>
+  
+    <div class=user_card_text>
+      <h2><%= user.name%></h2>
+      <p>Posts: <%= user.postsCounter%></p>
+    </div>
+<% end %>

@@ -214,6 +214,8 @@ GEM
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -281,7 +283,7 @@ DEPENDENCIES
   rails-controller-testing
   rspec-rails (~> 6.0, >= 6.0.3)
   rubocop (>= 1.0, < 2.0)
-  sassc-rails
+  sass-rails
   selenium-webdriver
   shoulda-matchers (~> 5.3)
   sprockets-rails

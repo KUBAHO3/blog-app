@@ -1,0 +1,140 @@
+.post {
+  &_card {
+    padding: 1rem;
+    border: solid 1px var(--light-grey);
+    border-radius: 0.25rem;
+    background-color: var(--very-light-grey);
+
+    h3 {
+      font-weight: 500;
+      padding-bottom: 0.5rem;
+
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &_text {
+      margin: 0;
+      padding: 0.5rem;
+      border-top: solid 1px var(--light-grey);
+      border-bottom: solid 1px var(--light-grey);
+    }
+
+    &_counters {
+      margin: 0;
+      padding: 0.5rem 0;
+      font-size: 0.85rem;
+      text-align: right;
+    }
+  }
+
+  &_list {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 0.25rem;
+    border: solid 1px var(--light-grey);
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &_item {
+      .post_card {
+        margin-bottom: 0;
+        padding: 0;
+        border-radius: 0.25rem 0.25rem 0 0;
+
+        h3 {
+          padding: 1rem;
+          border-bottom: solid 1px var(--light-grey);
+          background-color: var(--dark);
+          color: var(--light-grey);
+          border-radius: inherit;
+        }
+      }
+    }
+  }
+
+  &_cta {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  &_comment {
+    &_list {
+      padding: 1rem;
+      background-color: var(--light-grey);
+      border-radius: 0 0 0.25rem 0.25rem;
+      border-right: solid 1px var(--light-grey);
+      border-left: solid 1px var(--light-grey);
+      border-bottom: solid 1px var(--light-grey);
+
+      &_item {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    &_card {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &_author {
+      p {
+        margin: 0;
+        padding: 0.5rem 0;
+      }
+    }
+
+    &_text {
+      flex: 1;
+
+      p {
+        margin: 0;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        background-color: var(--very-light-grey);
+        border: solid 1px var(--grey);
+      }
+    }
+  }
+
+  &_details {
+    border: solid 1px var(--light-grey);
+    border-radius: 0.25rem 0.25rem 0 0;
+    background-color: var(--white);
+
+    &_header {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--dark);
+      border-radius: inherit;
+      color: var(--grey);
+
+      h1 {
+        font-weight: 500;
+        color: var(--light-grey);
+      }
+    }
+
+    &_text {
+      padding: 1rem;
+      margin: 0;
+      border-top: solid 1px var(--light-grey);
+    }
+
+    &_cta {
+      padding: 1rem;
+    }
+  }
+}

@@ -102,7 +102,7 @@ The Blog app will be a classic example of a blog website. I will create a fully 
 - **Create Ruby on Rails Project**
 - **Create modal schema**
 - **Add controllers**
-- **Display Text**
+- **Display Page views**
 - **Add controller tests**
 
 

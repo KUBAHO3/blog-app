@@ -20,7 +20,7 @@ RSpec.describe 'Posts', type: :request do
       end
 
       it 'should include the correct placeholder text' do
-        expect(response.body).to include('Hello List of posts will appear right here')
+        expect(response.body).to include(@user1.name)
       end
     end
 
@@ -39,7 +39,7 @@ RSpec.describe 'Posts', type: :request do
       end
 
       it 'should include the correct placeholder text' do
-        expect(response.body).to include('Hello Selected post detail will appear right here')
+        expect(response.body).to include(@post1.text)
       end
     end
   end

@@ -1,1 +1,27 @@
-<h1> Hello Selected user profile will appear right here</h1>
+<div class='user_profile'>
+  <div class='user_profile_header'>
+    <%= render 'shared/user_card', user: @users, user_card_class: 'user_card no_hover' %>
+    <div class='user_profile_bio'>
+      <h3>Bio</h3>
+      <p><%= @users.bio %></p>
+    </div>
+  </div>
+
+  <ul class='post_list'>
+    <% if @users.posts.empty? %>
+      <p class='user_empty-message'>No posts yet!</p>
+    <% else %>
+      <% @users.most_recent_three_posts.each do |post| %>
+        <li>
+          <%= render 'shared/post_card', post: post %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <% if @users.postsCounter %>
+    <div class='post_cta'>
+        <%=render 'shared/button', btnName: 'See all posts', btnClass: 'btn btn_cta', btnPath: user_posts_path(@users) %>
+    </div>
+  <% end %>
+</div>
