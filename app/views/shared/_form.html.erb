@@ -1,0 +1,20 @@
+<%= form_with model: model, url: url, class: 'form', local: true do |f| %>
+    <% if model == @like %>
+      <%= f.submit 'Like', class: 'btn btn_interact like_btn'%>
+    <% else %>
+      <% fields.each do |field| %>
+        <div class="field">
+          <% case field.to_s %>
+            <% when 'text' %>
+              <%= f.text_area field, placeholder: field.to_s.humanize %>
+            <% else %>
+              <%= f.text_field field, placeholder: field.to_s.humanize %>
+          <% end %>
+        </div>
+      <% end %>
+  
+      <div class="actions">
+        <%= f.submit class: 'btn btn_cta btn_cta_new' %>
+      </div>
+    <% end %>
+  <% end %>

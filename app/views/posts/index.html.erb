@@ -1,17 +1,23 @@
+<%= content_for :title, "Posts | " %>
+
 <%= render 'shared/user_card', user: @users, user_card_class: 'user_card no_hover' %>
+
+<div class='post_actions'>
+  <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@users) %>
+</div>
 
 <ul class='post_list'>
   <% if @users.posts.empty? %>
     <p class='user_empty-message'>No posts yet!</p>
   <% else %>
-    <% @users.most_recent_three_posts.each do |post| %>
+    <% @users.posts.order(created_at: :desc).each do |post| %>
       <li class='post_list_item'>
         <%= render 'shared/post_card', post: post %>
         <ul class='post_comment_list'>
           <% if post.comments.empty? %>
             <p class='comment_empty-message'>No comments yet!</p>
           <% else %>
-            <% @posts.each do |comment| %>
+            <% post.comments.each do |comment| %>
               <li class='post_comment_list_item'>
                 <%= render 'shared/comment_card', comment: comment %>
               </li>

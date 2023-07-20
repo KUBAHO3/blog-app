@@ -1,8 +1,13 @@
+<%= content_for :title, "#{@users.name} | " %>
+
 <div class='user_profile'>
   <div class='user_profile_header'>
     <%= render 'shared/user_card', user: @users, user_card_class: 'user_card no_hover' %>
     <div class='user_profile_bio'>
-      <h3>Bio</h3>
+      <div>
+        <h3>Bio</h3>
+        <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_alt btn_cta_new', btnPath: new_user_post_path(@users) %>
+      </div>
       <p><%= @users.bio %></p>
     </div>
   </div>

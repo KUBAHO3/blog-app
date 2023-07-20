@@ -1,6 +1,6 @@
 <%= link_to user, class: user_card_class do %>
     <div class='user_card_photo'>
-      <% if user.photo.present? %>
+      <% if user.photo.present? && user.photo.match(/.(jpg|jpeg|png|gif)$/i)%>
         <%= image_tag(user.photo, alt: user.name) %>
       <% else %>
         <%= image_tag('default_user.png', alt: user.name) %>

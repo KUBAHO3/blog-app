@@ -104,6 +104,7 @@ The Blog app will be a classic example of a blog website. I will create a fully 
 - **Add controllers**
 - **Display Page views**
 - **Add controller tests**
+- **Add forms**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
