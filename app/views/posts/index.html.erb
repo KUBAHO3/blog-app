@@ -11,7 +11,7 @@
           <% if post.comments.empty? %>
             <p class='comment_empty-message'>No comments yet!</p>
           <% else %>
-            <% posts.most_recent_five_comments.each do |comment| %>
+            <% @posts.each do |comment| %>
               <li class='post_comment_list_item'>
                 <%= render 'shared/comment_card', comment: comment %>
               </li>
