@@ -61,11 +61,17 @@
       border-bottom: solid 1px var(--light-grey);
       border-radius: 0 0 0.25rem 0.25rem;
 
-      h3 {
+      > div {
         padding-bottom: 0.5rem;
-        font-weight: 500;
-        color: var(--light-grey);
         border-bottom: solid 1px var(--grey);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          font-weight: 500;
+          color: var(--light-grey);
+        }
       }
 
       p {
