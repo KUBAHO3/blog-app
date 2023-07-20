@@ -1,0 +1,5 @@
+<%= content_for :title, 'Add new comment | ' %>
+
+<h1 class='form_title'>New comment</h1>
+
+<%= render 'shared/form', model: @comment, url: user_post_comments_path, fields: [:text] %>

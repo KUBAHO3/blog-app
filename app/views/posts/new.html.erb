@@ -1,0 +1,5 @@
+<%= content_for :title, 'Add new post | ' %>
+
+<h1 class='form_title'>New post</h1>
+
+<%= render 'shared/form', model: @posts, url: user_posts_path(@users), fields: [:title, :text] %>

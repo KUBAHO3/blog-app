@@ -1,3 +1,9 @@
+<%= content_for :title, "#{truncate(@posts.title, length: 20)} | " %>
+
+<div class='post_actions-p'>
+  <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@users) %>
+</div>
+
 <div class='post_details'>
   <div class='post_details_header'>
     <h1><%= link_to @posts.title, user_post_path(@users, @posts), class: 'post_details_title' %></h1>
@@ -5,6 +11,11 @@
   </div>
 
   <p class='post_details_text'><%= @posts.text %></p>
+
+  <div class='post_details_actions'>
+    <%= render 'shared/button', btnName: 'Add comment', btnPath: new_user_post_comment_path(@users, @posts), btnClass: 'btn btn_interact' %>
+    <%= render 'shared/form', model: @like, url: user_post_likes_path(@users, @posts), fields: [] %>
+  </div>
 </div>
 
 <ul class='post_comment_list'>
