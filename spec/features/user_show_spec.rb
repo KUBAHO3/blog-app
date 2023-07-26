@@ -15,10 +15,6 @@ RSpec.describe 'Users', type: :system, js: true do
     @post5 = Post.create(title: 'Like it or not', text: 'Like it or not, I am the best.', author: @john)
   end
 
-  describe 'show page' do
-    before(:example) do
-      visit user_path(@john)
-    end
 
     it 'shows the user profile information' do
       expect(page).to have_css("img[src*='https://picsum.photos/200/300']")
