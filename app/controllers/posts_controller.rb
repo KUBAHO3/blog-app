@@ -3,11 +3,11 @@ class PostsController < ApplicationController
   before_action :set_user, only: %i[index show new]
 
   def index
-    @posts = @user.posts.includes(:comments)
+    @posts = @users.posts.includes(:comments)
   end
 
   def show
-    @comments = @post.comments.includes(:author)
+    @comments = @posts.comments.includes(:author)
   end
 
   def new

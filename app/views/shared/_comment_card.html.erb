@@ -6,3 +6,24 @@
         <p><%= comment.text %></p>
     </div>
 </div>
+
+<%= javascript_tag do %>
+    function replaceWithDefaultImage(image, default_image_path) {
+      image.onerror = "";
+      image.src = default_image_path;
+      return true;
+    }
+  <% end %>
+  
+  <div class='comment_card'>
+    <div class='comment_photo'>
+      <%= link_to comment.author do %>
+        <%= image_tag(comment.author.photo, alt: comment.author.name, onerror: 'replaceWithDefaultImage(this, "/assets/default_user.png")', class: 'comment_photo_image') %>
+      <% end %>
+    </div>
+  
+    <div class='comment_text'>
+      <p><%= link_to comment.author.name, user_path(comment.author), class: 'comment_author' %></p>
+      <p><%= comment.text %></p>
+    </div>
+  </div>
