@@ -8,6 +8,6 @@ class UsersController < ApplicationController
   def show; end
 
   def set_user
-    @users = User.find(params[:id])
+    @users = User.includes(:posts).find(params[:id])
   end
 end
