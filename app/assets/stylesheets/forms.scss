@@ -5,12 +5,30 @@
 }
 
 .form {
+  max-width: 40rem;
+  margin: 0 auto;
+
+  &_title {
+    max-width: 40rem;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
   .field {
     &:not(:last-child) {
       margin-bottom: 1rem;
     }
 
-    input,
+     em {
+      display: block;
+      margin: 0.25rem 0;
+      font-size: 0.85rem;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
     textarea,
     select {
       width: 100%;
@@ -24,6 +42,32 @@
     textarea {
       resize: none;
       height: 8rem;
+    }
+  }
+
+  &_links {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+
+    h3 {
+      margin: 0 0 0.5rem;
+      font-weight: 500;
+    }
+
+    form {
+      display: inline-block;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 0.25rem;
+      font-size: 0.875rem;
+
+      &:hover {
+        text-decoration: underline;
+        color: var(--dark);
+      }
     }
   }
 }
