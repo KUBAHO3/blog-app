@@ -2,14 +2,14 @@
 
 <h1 class='title'>Heavens Blog App</h1>
 
-# <ul>
-#   <% if @users.empty? %>
-#     <p class="user_empty-message">No users yet!</p>
-#   <% else %>
-#     <% @users.each do |user| %>
-#       <li>
-#         <%= render 'shared/user_card', user: user, user_card_class: 'user_card' %>
-#       </li>
-#     <% end %>
-#   <% end %>
-# </ul>
+<ul>
+  <% if @users.empty? %>
+    <p class="user_empty-message">No users yet!</p>
+  <% else %>
+    <% @users.each do |user| %>
+      <li>
+        <%= render 'shared/user_card', user: user, user_card_class: 'user_card' %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
