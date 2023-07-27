@@ -71,13 +71,12 @@ group :development do
   # gem "spring"
 end
 
-# group :development, :test do
-#   gem 'rspec-rails', '~> 4.0.2'
-# end
-
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+
+  # Use database cleaner to reset the database between tests
+  gem 'database_cleaner'
 end

@@ -13,12 +13,12 @@
   </div>
 
   <ul class='post_list'>
-    <% if @users.posts.empty? %>
+    <% if @users.most_recent_three_posts.empty? %>
       <p class='user_empty-message'>No posts yet!</p>
     <% else %>
       <% @users.most_recent_three_posts.each do |post| %>
         <li>
-          <%= render 'shared/post_card', post: post %>
+          <%= render 'shared/post_card', post: post, post_card_class: 'post_card' %>
         </li>
       <% end %>
     <% end %>

@@ -1,10 +1,14 @@
+<%= javascript_tag do %>
+  function replaceWithDefaultImage(image, default_image_path) {
+    image.onerror = "";
+    image.src = default_image_path;
+    return true;
+  }
+<% end %>
+
 <%= link_to user, class: user_card_class do %>
     <div class='user_card_photo'>
-      <% if user.photo.present? && user.photo.match(/.(jpg|jpeg|png|gif)$/i)%>
-        <%= image_tag(user.photo, alt: user.name) %>
-      <% else %>
-        <%= image_tag('default_user.png', alt: user.name) %>
-      <% end %>
+    <%= image_tag(user.photo, alt: user.name, onerror: "replaceWithDefaultImage(this,'/assets/default_user.png')") %>
     </div>
   
     <div class=user_card_text>
