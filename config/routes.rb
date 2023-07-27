@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :add_devise_to_users
 
   root "users#index"
   
