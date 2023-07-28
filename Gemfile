@@ -73,6 +73,7 @@ end
 
 gem 'devise'
 gem 'mailcatcher'
+gem 'cancancan'
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
