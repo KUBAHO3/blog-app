@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_post_and_user, only: %i[new create destroy destroy]
   before_action :set_post_and_user, only: %i[new create]
 
   def new
@@ -17,6 +18,16 @@ class CommentsController < ApplicationController
       redirect_to user_post_path(@user, @post), notice: 'Comment was successfully created.'
     else
       render :new, alert: 'Comment was not created.'
+    end
+  end
+
+  def destroy
+    @comment = @post.comments.find(params[:id])
+
+    if @comment.destroy
+      redirect_back(fallback_location: user_post_path(@user, @post), notice: 'Comment was successfully deleted.')
+    else
+      render :show, alert: 'Comment was not deleted.'
     end
   end
 

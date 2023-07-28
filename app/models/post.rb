@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   validate :comments_counter_greater_than_zero
   validate :likes_counter_greater_than_zero
 
+  after_destroy { increment_posts_count(false) }
   belongs_to :author, class_name: 'User'
   has_many :likes, foreign_key: 'post_id', dependent: :destroy
   has_many :comments, foreign_key: 'post_id', dependent: :destroy
@@ -33,7 +34,11 @@ class Post < ApplicationRecord
 
   private
 
-  def increment_posts_count
-    author.increment!(:postsCounter)
+  def increment_posts_count(increment: true)
+    if increment
+      author.increment!(:posts_counter)
+    else
+      author.decrement!(:posts_counter)
+    end
   end
 end

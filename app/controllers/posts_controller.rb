@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_post, only: %i[show destroy]
+  before_action :set_user, only: %i[index show new destroy destroy]
   before_action :set_post, only: [:show]
   before_action :set_user, only: %i[index show new]
 
@@ -23,6 +25,14 @@ class PostsController < ApplicationController
       redirect_to user_posts_path(current_user, @posts), notice: 'Post was successfully created'
     else
       render :new, alert: 'post was not created.'
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      redirect_back(fallback_location: user_posts_path(current_user), notice: 'Post was successfully deleted.')
+    else
+      render :show, alert: 'Post was not deleted.'
     end
   end
 
