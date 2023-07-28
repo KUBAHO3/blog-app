@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
 
   private
 
-  def increment_comments_count(increment = true)
+  def increment_comments_count(increment: true)
     if increment
       author.increment!(:postsCounter)
     else

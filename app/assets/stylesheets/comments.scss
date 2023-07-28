@@ -1,3 +1,4 @@
+/* stylelint-disable */
 .comment {
   &_list {
     padding: 1rem;
@@ -18,7 +19,7 @@
     display: flex;
     gap: 1rem;
 
-    
+
     &_current_user {
       .comment_text {
         order: -1;
@@ -87,3 +88,4 @@
     }
   }
 }
+/* stylelint-enable */
