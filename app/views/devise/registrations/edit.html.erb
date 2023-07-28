@@ -14,6 +14,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.collection_select :role, User::ROLES, :to_s, -> (role) { role.to_s.humanize }%>
+  </div>
+
+  <div class="field">
     <%= f.password_field :password, autocomplete: "new-password", placeholder: "New password (leave blank if you don't want to change it)" %>
     <% if @minimum_password_length %>
       <em><%= @minimum_password_length %> characters minimum</em>
