@@ -6,7 +6,9 @@
     <div class='user_profile_bio'>
       <div>
         <h3>Bio</h3>
-        <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_alt btn_cta_new', btnPath: new_user_post_path(@users) %>
+        <% if current_user == @users %>
+          <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_alt btn_cta_new', btnPath: new_user_post_path(@user) %>
+        <% end %>
       </div>
       <p><%= @users.bio %></p>
     </div>

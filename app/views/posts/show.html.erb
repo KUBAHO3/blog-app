@@ -1,8 +1,11 @@
 <%= content_for :title, "#{truncate(@posts.title.capitalize, length: 20)} | " %>
 
+<%# show button only if the current user is the author of the post %>
+<% if current_user == @users %>
 <div class='post_actions-p'>
-  <%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@users) %>
+<%= render 'shared/button', btnName: 'New post +', btnClass: 'btn btn_cta btn_cta_new', btnPath: new_user_post_path(@users) %>
 </div>
+<% end %>
 
 <div class='post_details'>
   <div class='post_details_header'>
@@ -17,7 +20,7 @@
 
   <div class='post_details_actions'>
     <%= render 'shared/button', btnName: 'Add comment', btnPath: new_user_post_comment_path(@users, @posts), btnClass: 'btn btn_interact' %>
-    <%= render 'shared/form', model: @like, url: user_post_likes_path(@users, @posts), fields: [] %>
+    <%= render 'shared/form', model: @like, url: user_post_likes_path(@users, @posts), fields: [], class_name: 'form_like' %>
   </div>
 </div>
 

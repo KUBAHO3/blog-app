@@ -13,7 +13,7 @@
         <div class='post_card_grid'>
             <div class='post_card_actions'>
                 <%= render 'shared/button', btnName: 'Add comment', btnPath: new_user_post_comment_path(@users, post), btnClass: 'btn btn_interact' %>
-                <%= render 'shared/form', model: @like, url: user_post_likes_path(@users, post), fields: [] %>
+                <%= render 'shared/form', model: @like, url: user_post_likes_path(@users, post), fields: [], class_name: 'form_like' %>
             </div>
 
             <p class='post_card_counters'>Comments: <%= post.comments_counter %> | Likes: <%= post.likes_counter %></p>

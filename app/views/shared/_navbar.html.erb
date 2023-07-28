@@ -28,7 +28,7 @@
   
         <li class="nav_item">
   
-          <%= link_to "Users", users_path, class: "nav_link" %>
+          <%= link_to "Users#{'(' + User.count.to_s + ')' if User.count > 0}", users_path, class: "nav_link" %>
   
         </li>
   

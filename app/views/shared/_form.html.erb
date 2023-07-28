@@ -1,4 +1,4 @@
-<%= form_with model: model, url: url, class: 'form', local: true do |f| %>
+<%= form_with model: model, url: url, class: class_name, local: true do |f| %>
     <% if model == @like %>
       <%= f.submit 'Like', class: 'btn btn_interact like_btn'%>
     <% else %>

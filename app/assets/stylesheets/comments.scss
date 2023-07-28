@@ -17,6 +17,30 @@
   &_card {
     display: flex;
     gap: 1rem;
+
+    
+    &_current_user {
+      .comment_text {
+        order: -1;
+        background-color: var(--grey);
+        border: solid 1px var(--dark-grey);
+
+        p {
+          &:first-child {
+            text-align: right;
+            border-bottom: solid 1px var(--dark-grey);
+
+            a {
+              color: var(--very-dark);
+            }
+          }
+
+          &:last-child {
+            color: var(--dark);
+          }
+        }
+      }
+    }
   }
 
   &_photo {
