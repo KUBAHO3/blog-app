@@ -29,6 +29,10 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--grey);
   color: var(--dark-grey);
+
+  > div {
+    margin-top: 5rem;
+  }
 }
 
 a {
@@ -49,16 +53,56 @@ ul {
   margin: 0;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1rem 1rem 0;
+}
+
 .main {
   padding: 1rem;
   max-width: 60em;
   margin: 0 auto;
-}
 
-.title {
-  margin: 2rem 0;
-  font-size: 4rem;
-  font-weight: 900;
-  text-align: center;
-  color: var(--white);
+  .title {
+    margin: 0 0 2rem;
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .home {
+    text-align: center;
+
+    &_title {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--dark);
+
+      span {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+        a {
+          color: tomato;
+          transition: color 150ms ease-in-out;
+
+          &:hover {
+            text-decoration: underline;
+            color: var(--dark);
+          }
+        }
+      }
+    }
+
+    &_description {
+      font-weight: 500;
+      color: var(--dark-grey);
+    }
+  }
 }

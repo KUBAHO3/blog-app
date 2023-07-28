@@ -1,0 +1,23 @@
+.popup {
+  padding: 0 1rem;
+
+  p {
+    --notice: hsla(122, 39%, 49%, 0.3);
+    --alert: hsla(4, 90%, 58%, 0.3);
+
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    border-radius: 0.25rem;
+    text-align: center;
+    color: var(--dark);
+  }
+
+  &_notice {
+    background-color: var(--notice);
+  }
+
+  &_alert {
+    background-color: var(--alert);
+  }
+}

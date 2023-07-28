@@ -1,0 +1,9 @@
+<div class="popup">
+  <% if notice %>
+    <p class="popup_notice"><%= notice %></p>
+  <% elsif alert %>
+    <p class="popup_alert"><%= alert %></p>
+  <% else %>
+    <p class="popup_placeholder">&nbsp;</p>
+  <% end %>
+</div>
