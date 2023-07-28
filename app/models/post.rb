@@ -36,9 +36,9 @@ class Post < ApplicationRecord
 
   def increment_posts_count(increment: true)
     if increment
-      author.increment!(:posts_counter)
+      author.increment!(:postsCounter)
     else
-      author.decrement!(:posts_counter)
+      author.decrement!(:postsCounter)
     end
   end
 end
